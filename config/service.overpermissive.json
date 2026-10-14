@@ -1,0 +1,37 @@
+{
+  "service_id": "teaching-docs-local",
+  "version": "0.1",
+  "note": "Deliberately misconfigured deployment used as the Known Bad case: the document endpoint grants A read access to DB, which belongs to B, while the attachment endpoint does not. Nothing reveals this from outside; the only way to observe it is to send both requests and compare the responses.",
+  "users": {
+    "A": {
+      "token": "teaching-token-A",
+      "state": "active"
+    },
+    "B": {
+      "token": "teaching-token-B",
+      "state": "active"
+    },
+    "revoked_A": {
+      "token": "teaching-token-A-revoked",
+      "state": "revoked"
+    }
+  },
+  "documents": {
+    "DA": {
+      "owner": "A",
+      "body": "TEACHING_DA",
+      "attachment": "TEACHING_DA_ATTACHMENT"
+    },
+    "DB": {
+      "owner": "B",
+      "body": "TEACHING_DB",
+      "attachment": "TEACHING_DB_ATTACHMENT"
+    }
+  },
+  "shared_body_only": {
+    "DB": [
+      "A"
+    ]
+  }
+}
+

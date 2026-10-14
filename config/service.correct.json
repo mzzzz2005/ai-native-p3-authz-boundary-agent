@@ -1,0 +1,33 @@
+{
+  "service_id": "teaching-docs-local",
+  "version": "0.1",
+  "note": "Correct deployment. Tokens and document bodies are fictional teaching fixtures, confined to 127.0.0.1. They are not secrets and grant access to nothing else.",
+  "users": {
+    "A": {
+      "token": "teaching-token-A",
+      "state": "active"
+    },
+    "B": {
+      "token": "teaching-token-B",
+      "state": "active"
+    },
+    "revoked_A": {
+      "token": "teaching-token-A-revoked",
+      "state": "revoked"
+    }
+  },
+  "documents": {
+    "DA": {
+      "owner": "A",
+      "body": "TEACHING_DA",
+      "attachment": "TEACHING_DA_ATTACHMENT"
+    },
+    "DB": {
+      "owner": "B",
+      "body": "TEACHING_DB",
+      "attachment": "TEACHING_DB_ATTACHMENT"
+    }
+  },
+  "shared_with": {}
+}
+
