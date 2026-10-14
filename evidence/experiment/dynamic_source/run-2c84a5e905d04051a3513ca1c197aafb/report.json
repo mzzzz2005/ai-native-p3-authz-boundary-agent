@@ -1,0 +1,141 @@
+{
+  "run_id": "run-2c84a5e905d04051a3513ca1c197aafb",
+  "commit": "unavailable",
+  "working_tree_dirty_at_start": null,
+  "created_at": "2026-10-14T06:15:08.060467+00:00",
+  "contract_version": "p3-authz-contract-v0.1",
+  "registry_version": "p3-authz-registry-v0.1",
+  "strategy": "dynamic_source",
+  "policy_version": "authz-dynamic_source-v0.1",
+  "fixture_id": "public-good",
+  "fixture_version": "0.1",
+  "fixture_sha256": "d42964d341f0bc6b1648b10eb7e1b4629035931b82ddf31efe43367be329b39c",
+  "environment": {
+    "python": "3.13.15",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "target_id": "teaching-docs-sim",
+  "source": "fixture_demo",
+  "evidence_level": "OBSERVED",
+  "model_calls": 0,
+  "human_signoff": "pending",
+  "budgets": {
+    "max_attempts": 8,
+    "max_rounds": 8,
+    "logical_seconds": 90,
+    "concurrency": 1,
+    "retries": 0
+  },
+  "results": [
+    {
+      "test_id": "T01",
+      "execution_status": "EXECUTED",
+      "conclusion": "NOT_CONFIRMED",
+      "reason": "expected_behavior_in_checked_scope",
+      "evidence_ids": [
+        "run-2c84a5e905d04051a3513ca1c197aafb:E003"
+      ],
+      "authz_version_at_decision": 1
+    },
+    {
+      "test_id": "T02",
+      "execution_status": "DENIED",
+      "conclusion": "INCONCLUSIVE",
+      "reason": "authorization_denied",
+      "evidence_ids": [
+        "run-2c84a5e905d04051a3513ca1c197aafb:E008"
+      ],
+      "authz_version_at_decision": 2
+    },
+    {
+      "test_id": "T03",
+      "execution_status": "EXECUTED",
+      "conclusion": "NOT_CONFIRMED",
+      "reason": "expected_behavior_in_checked_scope",
+      "evidence_ids": [
+        "run-2c84a5e905d04051a3513ca1c197aafb:E014"
+      ],
+      "authz_version_at_decision": 2
+    },
+    {
+      "test_id": "T04",
+      "execution_status": "EXECUTED",
+      "conclusion": "NOT_CONFIRMED",
+      "reason": "expected_behavior_in_checked_scope",
+      "evidence_ids": [
+        "run-2c84a5e905d04051a3513ca1c197aafb:E011"
+      ],
+      "authz_version_at_decision": 2
+    },
+    {
+      "test_id": "T05",
+      "execution_status": "EXECUTED",
+      "conclusion": "NOT_CONFIRMED",
+      "reason": "expected_behavior_in_checked_scope",
+      "evidence_ids": [
+        "run-2c84a5e905d04051a3513ca1c197aafb:E017"
+      ],
+      "authz_version_at_decision": 2
+    },
+    {
+      "test_id": "T06",
+      "execution_status": "EXECUTED",
+      "conclusion": "NOT_CONFIRMED",
+      "reason": "expected_behavior_in_checked_scope",
+      "evidence_ids": [
+        "run-2c84a5e905d04051a3513ca1c197aafb:E006"
+      ],
+      "authz_version_at_decision": 1
+    }
+  ],
+  "stop_reason": "plan_finished",
+  "actual_attempts": 5,
+  "planner_rounds": 6,
+  "logical_seconds": 5,
+  "wall_seconds": 0.001752399984980002,
+  "uncovered": [
+    "T02"
+  ],
+  "denied": [
+    "T02"
+  ],
+  "authorization": {
+    "strategy": "dynamic_source",
+    "version_at_start": 1,
+    "version_at_end": 2,
+    "scope_at_start": {
+      "T01": "authorized",
+      "T02": "authorized",
+      "T03": "authorized",
+      "T04": "authorized",
+      "T05": "authorized",
+      "T06": "authorized"
+    },
+    "scope_at_end": {
+      "T01": "authorized",
+      "T02": "revoked",
+      "T03": "authorized",
+      "T04": "authorized",
+      "T05": "authorized",
+      "T06": "authorized"
+    },
+    "applied_events": [
+      {
+        "version": 2,
+        "test_id": "T02",
+        "state": "revoked",
+        "reason": "controlled withdrawal at a fixed point"
+      }
+    ],
+    "refused_events": [],
+    "boundary_notes": [
+      {
+        "after_attempt": 2,
+        "test_id": "T02",
+        "accepted": true,
+        "note": "withdrawal takes effect before the next admission"
+      }
+    ]
+  },
+  "limits": "Offline fixture only. No live target, no model planner, no independent peer verification. Simulated results must not be presented as real service acceptance."
+}

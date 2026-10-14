@@ -1,0 +1,57 @@
+{
+  "experiment": "static_snapshot_vs_dynamic_source",
+  "fixture": "public-good",
+  "note": "Both runs share contract, fixture, checks and budgets. The only difference is the authorization source, so a behavioural difference is attributable to it.",
+  "runs": [
+    {
+      "actual_attempts": 6,
+      "applied_events": 0,
+      "authz_version_at_end": 1,
+      "boundary_notes": [
+        {
+          "accepted": false,
+          "after_attempt": 2,
+          "note": "static snapshot refused the withdrawal; scope unchanged",
+          "test_id": "T02"
+        }
+      ],
+      "denied": [],
+      "refused_events": 1,
+      "run_dir": "evidence/experiment/static_snapshot/run-ba678b1a4d804dee9658e0bf974c8aaa",
+      "run_id": "run-ba678b1a4d804dee9658e0bf974c8aaa",
+      "scope_revoked_tests": [],
+      "stop_reason": "plan_finished",
+      "strategy": "static_snapshot",
+      "uncovered": []
+    },
+    {
+      "actual_attempts": 5,
+      "applied_events": 1,
+      "authz_version_at_end": 2,
+      "boundary_notes": [
+        {
+          "accepted": true,
+          "after_attempt": 2,
+          "note": "withdrawal takes effect before the next admission",
+          "test_id": "T02"
+        }
+      ],
+      "denied": [
+        "T02"
+      ],
+      "refused_events": 0,
+      "run_dir": "evidence/experiment/dynamic_source/run-2c84a5e905d04051a3513ca1c197aafb",
+      "run_id": "run-2c84a5e905d04051a3513ca1c197aafb",
+      "scope_revoked_tests": [
+        "T02"
+      ],
+      "stop_reason": "plan_finished",
+      "strategy": "dynamic_source",
+      "uncovered": [
+        "T02"
+      ]
+    }
+  ],
+  "withdrawal_after_attempt": 2,
+  "withdrawn_test": "T02"
+}
