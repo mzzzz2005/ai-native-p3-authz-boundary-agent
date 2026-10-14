@@ -13,12 +13,17 @@
 | A09 | 预算不可超出策略上限 | `test_budget_cannot_be_increased_beyond_policy` | 异常 |
 | A10 | 证据哈希一致 | 各测试内的 checksums 校验 | `checksums.json` |
 | A11 | 对照实验可复现 | `scripts/compare_strategies.py` | `evidence/experiment/experiment.json` |
+| A12 | 被测服务真实鉴权 | `test_correct_deployment_enforces_authentication_and_ownership` | `doc_service/` |
+| A13 | 拒绝响应不泄露内容 | `test_forbidden_response_never_leaks_the_canary` | 真实 403 响应 |
+| A14 | 能发现真实误配且只发现它 | `test_overpermissive_deployment_confirms_only_the_real_defect` | `evidence/service/overpermissive/` |
+| A15 | 凭据可在运行中真实撤销 | `test_revoked_credential_can_be_withdrawn_while_running` | 服务端 401 |
+| A16 | 客户端拒绝任意 URL 与未注册检查 | `test_agent_refuses_arbitrary_url_and_unregistered_check` | 异常 |
+| A17 | 传输失败判证据不足，不算发现 | `test_transport_failure_is_inconclusive_not_a_finding` | `tool_error` |
 
 ## 尚未验收
 
 | 项目 | 状态 |
 | --- | --- |
-| 真实本地服务接入 | 未开始，需教师授权目标与环境 |
 | 评价 Agent 与交叉评价 | 未开始，需冻结契约与配对组配合 |
 | 伙伴独立复现 | 未开始 |
 | 人工签署 | `human_signoff` 保持 `pending` |

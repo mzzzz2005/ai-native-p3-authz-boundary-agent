@@ -14,6 +14,8 @@ P3 授权边界测试 Agent，授权状态驱动路线。当前 v0.1 是 Python 
 | 改结论判定 | `docs/spec.md` | `src/authz_agent/reporting.py` |
 | 改编排或证据 | `docs/state-model.md` | `src/authz_agent/runner.py` |
 | 跑对照实验 | `docs/experiment.md` | `scripts/compare_strategies.py` |
+| 改被测服务 | `docs/local-service.md` | `src/doc_service/` |
+| 改真实请求映射 | `docs/spec.md` | `src/authz_agent/target.py` |
 
 ## 三条重要约定
 
@@ -34,6 +36,8 @@ python -m compileall -q src scripts eval
 python -m unittest discover -s eval -v
 python scripts/run_demo.py --scenario good
 python scripts/compare_strategies.py --scenario good --after-attempt 2 --revoke-test T02
+python scripts/run_service_scenario.py --deployment correct
+python scripts/run_service_scenario.py --deployment overpermissive
 ```
 
 本切片无需安装依赖、模型密钥、网络或服务端。
