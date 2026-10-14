@@ -1,0 +1,41 @@
+{
+  "run_id": "run-ea2e05bdde65417ca892751e8434bb33",
+  "commit": "unavailable",
+  "working_tree_dirty_at_start": null,
+  "created_at": "2026-10-14T06:48:24.244610+00:00",
+  "contract_version": "p3-authz-contract-v0.1",
+  "registry_version": "p3-authz-registry-v0.1",
+  "strategy": "static_snapshot",
+  "policy_version": "authz-static_snapshot-v0.1",
+  "fixture_id": "local-service-overpermissive",
+  "fixture_version": "0.1",
+  "fixture_sha256": "dcd6e74c4b4d474d6d0ad03cfdfc12f0311776279d96eaead5d15c21da5bb4fc",
+  "environment": {
+    "python": "3.13.15",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "target_id": "teaching-docs-sim",
+  "source": "fixture_demo",
+  "evidence_level": "OBSERVED",
+  "model_calls": 0,
+  "human_signoff": "pending",
+  "budgets": {
+    "max_attempts": 8,
+    "max_rounds": 8,
+    "logical_seconds": 90,
+    "concurrency": 1,
+    "retries": 0
+  },
+  "target_kind": "local_service",
+  "service": {
+    "service_id": "teaching-docs-local",
+    "version": "0.1",
+    "fingerprint": "088534a11ca5bd72b2925d0df229cd02dd986fc5868e029f3c097596660b3508",
+    "shared_with": {},
+    "shared_body_only": {
+      "DB": [
+        "A"
+      ]
+    }
+  }
+}
