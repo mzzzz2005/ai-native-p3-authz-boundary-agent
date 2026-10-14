@@ -62,6 +62,8 @@ def run(
     max_attempts: int = 8,
     logical_budget: int = 90,
     revocations: list[dict] | None = None,
+    executor=None,
+    extra_metadata: dict | None = None,
 ) -> Path:
     """Run once with one authorization strategy.
 
@@ -74,7 +76,7 @@ def run(
     controller = Controller(
         source=source, max_attempts=max_attempts, logical_budget=logical_budget
     )
-    simulator = Simulator(fixture)
+    simulator = executor if executor is not None else Simulator(fixture)
     run_id = "run-" + uuid.uuid4().hex
     destination = output_root / run_id
     destination.mkdir(parents=True, exist_ok=False)
@@ -112,6 +114,8 @@ def run(
             "retries": 0,
         },
     }
+    if extra_metadata:
+        metadata.update(extra_metadata)
     write_json(destination / "metadata.json", metadata)
     write_json(destination / "fixture.json", fixture)
 
