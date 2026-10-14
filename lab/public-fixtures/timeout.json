@@ -1,0 +1,11 @@
+{
+  "fixture_id": "public-timeout",
+  "version": "0.1",
+  "overrides": {
+    "T01": {
+      "tool_error": "simulated_timeout",
+      "logical_seconds": 90
+    }
+  }
+}
+

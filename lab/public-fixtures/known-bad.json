@@ -1,0 +1,11 @@
+{
+  "fixture_id": "public-known-bad",
+  "version": "0.1",
+  "overrides": {
+    "T02": {
+      "status_code": 200,
+      "body": "TEACHING_DB"
+    }
+  }
+}
+
